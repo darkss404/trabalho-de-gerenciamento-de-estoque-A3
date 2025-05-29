@@ -62,7 +62,7 @@ public class FrmCadastroCategoria extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel3.setText("Código da Categoria:");
+        jLabel3.setText("Prefixo da Categoria:");
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
