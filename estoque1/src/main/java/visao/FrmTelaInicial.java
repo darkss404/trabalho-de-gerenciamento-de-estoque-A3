@@ -28,13 +28,12 @@ public class FrmTelaInicial extends javax.swing.JFrame {
 
         JBSair = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        JBCadastrarProduto = new javax.swing.JMenuItem();
         JBCadastrarCategoria = new javax.swing.JMenuItem();
+        JBCadastrarProduto = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        JBEditarProduto = new javax.swing.JMenuItem();
         JBEditarCategoria = new javax.swing.JMenuItem();
+        JBEditarProduto = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
 
@@ -47,22 +46,12 @@ public class FrmTelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("Gerenciar");
-
         jMenu3.setText("Cadastrar");
         jMenu3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu3ActionPerformed(evt);
             }
         });
-
-        JBCadastrarProduto.setText("Produto");
-        JBCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBCadastrarProdutoActionPerformed(evt);
-            }
-        });
-        jMenu3.add(JBCadastrarProduto);
 
         JBCadastrarCategoria.setText("Categoria");
         JBCadastrarCategoria.addActionListener(new java.awt.event.ActionListener() {
@@ -72,9 +61,25 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         });
         jMenu3.add(JBCadastrarCategoria);
 
-        jMenu1.add(jMenu3);
+        JBCadastrarProduto.setText("Produto");
+        JBCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCadastrarProdutoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(JBCadastrarProduto);
+
+        jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Editar");
+
+        JBEditarCategoria.setText("Categoria");
+        JBEditarCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBEditarCategoriaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(JBEditarCategoria);
 
         JBEditarProduto.setText("Produto");
         JBEditarProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -84,14 +89,9 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         });
         jMenu4.add(JBEditarProduto);
 
-        JBEditarCategoria.setText("Categoria");
-        jMenu4.add(JBEditarCategoria);
+        jMenuBar1.add(jMenu4);
 
-        jMenu1.add(jMenu4);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Outros");
+        jMenu2.setText("Consultar");
 
         jMenuItem5.setText("Balanço");
         jMenu2.add(jMenuItem5);
@@ -140,8 +140,13 @@ FrmCadastroProduto objeto = new FrmCadastroProduto();
     }//GEN-LAST:event_jMenu3ActionPerformed
 
     private void JBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSairActionPerformed
-System.exit(0);        // TODO add your handling code here:
+        System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_JBSairActionPerformed
+
+    private void JBEditarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarCategoriaActionPerformed
+FrmEditarCategoria objeto = new FrmEditarCategoria();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_JBEditarCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,7 +190,6 @@ System.exit(0);        // TODO add your handling code here:
     private javax.swing.JMenuItem JBEditarCategoria;
     private javax.swing.JMenuItem JBEditarProduto;
     private javax.swing.JButton JBSair;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
