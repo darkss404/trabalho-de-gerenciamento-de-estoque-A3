@@ -4,16 +4,18 @@
  */
 package visao;
 
+import java.util.ArrayList;
+import modelo.Produtos;
+
 /**
  *
  * @author hdkil
  */
 public class FrmTelaInicial extends javax.swing.JFrame {
+    private ArrayList<Produtos> estoque;
 
-    /**
-     * Creates new form FrmMenuPrincipal
-     */
-    public FrmTelaInicial() {
+    public FrmTelaInicial(ArrayList<Produtos> estoque) {
+        this.estoque = estoque;
         initComponents();
     }
 
@@ -133,8 +135,8 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBCadastrarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarCategoriaActionPerformed
-FrmCadastroCategoria objeto = new FrmCadastroCategoria();
-        objeto.setVisible(true);        // TODO add your handling code here:
+        FrmCadastroCategoria objeto = new FrmCadastroCategoria();
+        objeto.setVisible(true);     
     }//GEN-LAST:event_JBCadastrarCategoriaActionPerformed
 
     private void JBEditarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarProdutoActionPerformed
@@ -142,8 +144,8 @@ FrmEditarProduto objeto = new FrmEditarProduto();
         objeto.setVisible(true);      }//GEN-LAST:event_JBEditarProdutoActionPerformed
 
     private void JBCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarProdutoActionPerformed
-FrmCadastroProduto objeto = new FrmCadastroProduto();
-        objeto.setVisible(true);        // TODO add your handling code here:
+        FrmCadastroProduto objeto = new FrmCadastroProduto(this.estoque);
+        objeto.setVisible(true);
     }//GEN-LAST:event_JBCadastrarProdutoActionPerformed
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
@@ -172,35 +174,12 @@ FrmEditarCategoria objeto = new FrmEditarCategoria();
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmTelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
+    public static void main(String args[]) {   
+        ArrayList<Produtos> estoque = new ArrayList<>(); 
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new FrmTelaInicial().setVisible(true);
+                new FrmTelaInicial(estoque).setVisible(true);
             }
         });
     }

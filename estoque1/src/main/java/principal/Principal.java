@@ -1,10 +1,13 @@
 package principal;
 
+import java.util.ArrayList;
 import visao.FrmTelaInicial;
+import  modelo.Produtos;
 
 public class Principal {
     public static void main(String[] args) {
-        FrmTelaInicial objetotela = new FrmTelaInicial();
-        objetotela.setVisible(true);
+        ArrayList<Produtos> estoque = new ArrayList<>();
+        FrmTelaInicial objetotela = new FrmTelaInicial (estoque);
+        objetotela.setVisible(true); 
     }
 }
