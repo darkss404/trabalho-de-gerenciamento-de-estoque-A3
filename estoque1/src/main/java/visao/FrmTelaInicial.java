@@ -26,7 +26,6 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JBSair = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         JBCadastrarCategoria = new javax.swing.JMenuItem();
@@ -36,15 +35,12 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         JBEditarProduto = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        JBSair.setText("Sair");
-        JBSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBSairActionPerformed(evt);
-            }
-        });
+        jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jMenu3.setText("Cadastrar");
         jMenu3.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +92,22 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         jMenuItem5.setText("Balanço");
         jMenu2.add(jMenuItem5);
 
+        jMenuItem1.setText("Lista de Preços");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("Relátorios");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -104,20 +116,14 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JBSair)
-                .addContainerGap(322, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(348, Short.MAX_VALUE)
-                .addComponent(JBSair)
-                .addContainerGap())
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(416, 408));
+        setSize(new java.awt.Dimension(316, 308));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -139,14 +145,18 @@ FrmCadastroProduto objeto = new FrmCadastroProduto();
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu3ActionPerformed
 
-    private void JBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSairActionPerformed
-        System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_JBSairActionPerformed
-
     private void JBEditarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarCategoriaActionPerformed
 FrmEditarCategoria objeto = new FrmEditarCategoria();
         objeto.setVisible(true);
     }//GEN-LAST:event_JBEditarCategoriaActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,11 +199,12 @@ FrmEditarCategoria objeto = new FrmEditarCategoria();
     private javax.swing.JMenuItem JBCadastrarProduto;
     private javax.swing.JMenuItem JBEditarCategoria;
     private javax.swing.JMenuItem JBEditarProduto;
-    private javax.swing.JButton JBSair;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }
