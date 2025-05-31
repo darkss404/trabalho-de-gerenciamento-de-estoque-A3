@@ -34,8 +34,8 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         JBEditarCategoria = new javax.swing.JMenuItem();
         JBEditarProduto = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        JBBalanço = new javax.swing.JMenuItem();
+        JBLista = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,16 +89,21 @@ public class FrmTelaInicial extends javax.swing.JFrame {
 
         jMenu2.setText("Consultar");
 
-        jMenuItem5.setText("Balanço");
-        jMenu2.add(jMenuItem5);
-
-        jMenuItem1.setText("Lista de Preços");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        JBBalanço.setText("Balanço");
+        JBBalanço.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                JBBalançoActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jMenu2.add(JBBalanço);
+
+        JBLista.setText("Lista de Preços");
+        JBLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBListaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(JBLista);
 
         jMenuItem2.setText("Relátorios");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -116,14 +121,14 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 427, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(316, 308));
+        setSize(new java.awt.Dimension(466, 458));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -150,13 +155,19 @@ FrmEditarCategoria objeto = new FrmEditarCategoria();
         objeto.setVisible(true);
     }//GEN-LAST:event_JBEditarCategoriaActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void JBListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListaActionPerformed
+    FrmListadePreços objeto = new FrmListadePreços();
+        objeto.setVisible(true);    // TODO add your handling code here:
+    }//GEN-LAST:event_JBListaActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void JBBalançoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBalançoActionPerformed
+     FrmBalanço objeto = new FrmBalanço();
+        objeto.setVisible(true);   // TODO add your handling code here:
+    }//GEN-LAST:event_JBBalançoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,16 +206,16 @@ FrmEditarCategoria objeto = new FrmEditarCategoria();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem JBBalanço;
     private javax.swing.JMenuItem JBCadastrarCategoria;
     private javax.swing.JMenuItem JBCadastrarProduto;
     private javax.swing.JMenuItem JBEditarCategoria;
     private javax.swing.JMenuItem JBEditarProduto;
+    private javax.swing.JMenuItem JBLista;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }

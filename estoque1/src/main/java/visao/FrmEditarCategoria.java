@@ -3,12 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package visao;
-
-import modelo.Categoria;
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author hdkil
@@ -103,7 +97,7 @@ public class FrmEditarCategoria extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel1)
@@ -113,7 +107,7 @@ public class FrmEditarCategoria extends javax.swing.JFrame {
                                 .addComponent(JTFEmbalagem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                                 .addComponent(JTFTamanho, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(JTFNome, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addGap(0, 19, Short.MAX_VALUE))
+                        .addGap(0, 22, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(JBCancelar)
@@ -140,7 +134,7 @@ public class FrmEditarCategoria extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JTFEmbalagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBCancelar)
                     .addComponent(JBApagar)
@@ -148,61 +142,12 @@ public class FrmEditarCategoria extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(466, 456));
+        setSize(new java.awt.Dimension(466, 458));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAlterarActionPerformed
-try {
-            // recebendo e validando dados da interface gráfica.
-            int id = 0;
-            String nome = "";
-            String tamanho = "";
-            String embalagem = "";
 
-            if (this.JTFNome.getText().length() < 2) {
-                throw new Mensagem("Nome deve conter ao menos 2 caracteres.");
-            } else {
-                nome = this.JTFNome.getText();
-            }
-
-            if (this.JTFTamanho.getText().length() <= 0) {
-                throw new Mensagem("Tamanho não pode estar em branco.");
-            } else {
-                tamanho = this.JTFTamanho.getText();
-            }
-
-            if (this.JTFEmbalagem.getText().length() < 2) {
-                throw new Mensagem("Embalagem não pode estar em branco.");
-            } else {
-                embalagem = this.JTFEmbalagem.getText();
-            }
-
-            if (this.JTableCategoria.getSelectedRow() == -1) {
-                throw new Mensagem("Primeiro Selecione uma categoria para Alterar");
-            } else {
-                id = Integer.parseInt(this.JTableCategoria.getValueAt(this.JTableCategoria.getSelectedRow(), 0).toString());
-            }
-
-            // envia os dados para o Aluno processar
-            if (this.Categoria.updateCategoriaBD(id, nome, tamanho, embalagem)) {
-                // limpa os campos
-                this.JTFNome.setText("");
-                this.JTFTamanho.setText("");
-                this.JTFEmbalagem.setText("");
-                JOptionPane.showMessageDialog(null, "Categoria Alterada com Sucesso!");
-
-            }
-            // Exibe no console o aluno cadastrado
-            System.out.println(this.Categoria.getMinhaLista().toString());
-        } catch (Mensagem erro) {
-            JOptionPane.showMessageDialog(null, erro.getMessage());
-        } catch (NumberFormatException erro2) {
-            JOptionPane.showMessageDialog(null, "Informe um caractere válido.");
-        } finally {
-            // atualiza a tabela.
-            carregaTabela();
-}
     }//GEN-LAST:event_JBAlterarActionPerformed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
@@ -210,67 +155,16 @@ this.dispose();          // TODO add your handling code here:
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
-   try {
-            // validando dados da interface gráfica.
-            int id = 0;
-            if (this.JTableCategoria.getSelectedRow() == -1) {
-                throw new Mensagem("Primeiro Selecione uma categoria para APAGAR");
-            } else {
-                id = Integer.parseInt(this.JTableCategoria.getValueAt(this.JTableCategoria.getSelectedRow(), 0).toString());
-            }
-
-            // retorna 0 -> primeiro botão | 1 -> segundo botão | 2 -> terceiro botão
-            int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar esta categoria ?");
-
-            if (respostaUsuario == 0) {// clicou em SIM
-                // envia os dados para o Aluno processar
-                if (this.Categoria.deletecategoriaBD(id)) {
-                    // limpa os campos
-                    this.JTFNome.setText("");
-                    this.JTFTamanho.setText("");
-                    this.JTFEmbalagem.setText("");
-                    JOptionPane.showMessageDialog(rootPane, "Categoria Apagada com Sucesso!");
-                }
-            }
-            // atualiza a tabela.
-            System.out.println(this.Categoria.getMinhaLista().toString());
-        } catch (Mensagem erro) {
-            JOptionPane.showMessageDialog(null, erro.getMessage());
-        } finally {
-            // atualiza a tabela.
-            carregaTabela();
-        }        // TODO add your handling code here:        // TODO add your handling code here:
+        // TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_JBApagarActionPerformed
 
     private void JTableCategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTableCategoriaMouseClicked
-if (this.JTableCategoria.getSelectedRow() != -1) {
-            String nome = this.JTableCategoria.getValueAt(this.JTableCategoria.getSelectedRow(), 1).toString();
-            String tamanho = this.JTableCategoria.getValueAt(this.JTableCategoria.getSelectedRow(), 2).toString();
-            String embalagem = this.JTableCategoria.getValueAt(this.JTableCategoria.getSelectedRow(), 3).toString();
 
-            this.JTFNome.setText(nome);
-            this.JTFTamanho.setText(tamanho);
-            this.JTFEmbalagem.setText(embalagem);
-        }        // TODO add your handling code here:
     }//GEN-LAST:event_JTableCategoriaMouseClicked
 
     private void JTFTamanhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFTamanhoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFTamanhoActionPerformed
-public void carregaTabela() {
-        DefaultTableModel modelo = (DefaultTableModel) this.JTableCategoria.getModel();
-        modelo.setNumRows(0); // Posiciona na primeira linha da tabela
-        // Carrega a lista de objetos aluno
-        ArrayList<Categoria> minhaLista = Objeto.getMinhaLista();
-        for (Categoria a : minhaLista) {
-            modelo.addRow(new Object[]{
-                a.getId(),
-                a.getNome(),
-                a.getTamanho(),
-                a.getEmbalagem(),
-            });
-        }
-    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -319,8 +213,4 @@ public void carregaTabela() {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-
-    private void carregaTabela() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
