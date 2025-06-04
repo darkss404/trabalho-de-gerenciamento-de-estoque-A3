@@ -19,6 +19,11 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         initComponents();
     }
 
+    FrmTelaInicial() {
+        this.estoque = new ArrayList<>();
+        initComponents();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -140,7 +145,7 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_JBCadastrarCategoriaActionPerformed
 
     private void JBEditarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarProdutoActionPerformed
-FrmEditarProduto objeto = new FrmEditarProduto();
+        FrmEditarProduto objeto = new FrmEditarProduto();
         objeto.setVisible(true);      }//GEN-LAST:event_JBEditarProdutoActionPerformed
 
     private void JBCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarProdutoActionPerformed
@@ -153,12 +158,12 @@ FrmEditarProduto objeto = new FrmEditarProduto();
     }//GEN-LAST:event_jMenu3ActionPerformed
 
     private void JBEditarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarCategoriaActionPerformed
-FrmEditarCategoria objeto = new FrmEditarCategoria();
+        FrmEditarCategoria objeto = new FrmEditarCategoria();
         objeto.setVisible(true);
     }//GEN-LAST:event_JBEditarCategoriaActionPerformed
 
     private void JBListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListaActionPerformed
-    FrmListadePreços objeto = new FrmListadePreços();
+    FrmListadePrecos objeto = new FrmListadePrecos();
         objeto.setVisible(true);    // TODO add your handling code here:
     }//GEN-LAST:event_JBListaActionPerformed
 
@@ -167,7 +172,7 @@ FrmEditarCategoria objeto = new FrmEditarCategoria();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void JBBalançoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBalançoActionPerformed
-     FrmBalanço objeto = new FrmBalanço();
+     FrmBalanco objeto = new FrmBalanco();
         objeto.setVisible(true);   // TODO add your handling code here:
     }//GEN-LAST:event_JBBalançoActionPerformed
 

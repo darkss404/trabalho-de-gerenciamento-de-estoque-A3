@@ -8,8 +8,10 @@ public class Produtos {
     private int qtdMinima;
     private int qtdMaxima;
     private double preco;
+    private String unidade;
+    private String embalagem;
 
-    public Produtos(String nome, int qtdAtual, String codigo, int qtdMinima, int qtdMaxima, int par1, double preco) {
+    public Produtos(String nome, int qtdAtual, String codigo, int qtdMinima, int qtdMaxima, int par1, double preco, String unidade, String embalagem) {
         this.nome = nome;
         this.codigo = codigo;
         this.categoria = categoria;
@@ -17,6 +19,12 @@ public class Produtos {
         this.qtdMinima = qtdMinima;
         this.qtdMaxima = qtdMaxima;
         this.preco = preco;
+        this.unidade = unidade;
+        this.embalagem = embalagem;
+    }
+
+    public String getEmbalagem() {
+        return embalagem;
     }
 
     public void entrada(int quantidade) {
@@ -68,6 +76,10 @@ public class Produtos {
     public double getPreco() {
         return preco;
     }
+    
+     public String getUnidade() {
+        return unidade;
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -97,5 +109,13 @@ public class Produtos {
         this.preco = preco;
    
     }
+    
+    public void setUnidade(String unidade) {
+        this.unidade = unidade;
+    }
+    public void setEmbalagem(String embalagem) {
+        this.embalagem = embalagem;
+    }
+
 }
 
