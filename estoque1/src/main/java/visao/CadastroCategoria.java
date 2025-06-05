@@ -123,28 +123,28 @@ public class CadastroCategoria extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFNomeActionPerformed
 
     private void JBSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalvarActionPerformed
- String nome = JTFNome.getText();
-    String tamanho = JTFTamanho.getText();
-    String embalagem = JTFEmbalagem.getText();
+        String nome = JTFNome.getText();
+        String tamanho = JTFTamanho.getText();
+        String embalagem = JTFEmbalagem.getText();
 
-    if (nome.isEmpty() || tamanho.isEmpty() || embalagem.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Preencha todos os campos.", "Aviso", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
+        if (nome.isEmpty() || tamanho.isEmpty() || embalagem.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-    Categoria categoria = new Categoria(nome, tamanho, embalagem);
-    CategoriaDao dao = new CategoriaDao();
+        Categoria categoria = new Categoria(nome, tamanho, embalagem);
+        CategoriaDao dao = new CategoriaDao();
 
-     try {
-        dao.inserir(categoria);
-        JOptionPane.showMessageDialog(this, "Categoria cadastrada com sucesso!");
-        JTFNome.setText("");
-        JTFTamanho.setText("");
-        JTFEmbalagem.setText("");
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(this, "Erro ao cadastrar categoria: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-    }
-   
+        try {
+            dao.inserir(categoria);
+            JOptionPane.showMessageDialog(this, "Categoria cadastrada com sucesso!");
+            JTFNome.setText("");
+            JTFTamanho.setText("");
+            JTFEmbalagem.setText("");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Erro ao cadastrar categoria: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_JBSalvarActionPerformed
 
     private void JTFEmbalagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmbalagemActionPerformed

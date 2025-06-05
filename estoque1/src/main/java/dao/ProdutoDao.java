@@ -11,13 +11,13 @@ import java.util.List;
 import java.math.BigDecimal;
 import modelo.Categoria;
 
-public class ProdutoDao{
+public class ProdutoDao {
 
     private final CategoriaDao categoriaDAO = new CategoriaDao();
 
     public void inserir(Produto p) throws SQLException {
-        String sql = "INSERT INTO produtos (nome, unidade, valor_unitario, qtd_min, qtd_max, qtd_atual, id_categoria) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO produtos (nome, unidade, valor_unitario, qtd_min, qtd_max, qtd_atual, id_categoria) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = DB.get(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, p.getNome());
             ps.setString(2, p.getUnidade());
@@ -39,11 +39,11 @@ public class ProdutoDao{
                 Categoria cat = categoriaDAO.buscarPorId(rs.getInt("id_categoria"));
 
                 Produto p = new Produto(
-                                        rs.getString("nome"), rs.getInt("id"),
-                    rs.getString("unidade"),
-                    rs.getInt("qtd_min"),
-                    rs.getInt("qtd_max"),
-                    rs.getInt("qtd_atual")
+                        rs.getString("nome"), rs.getInt("id"),
+                        rs.getString("unidade"),
+                        rs.getInt("qtd_min"),
+                        rs.getInt("qtd_max"),
+                        rs.getInt("qtd_atual")
                 );
                 lista.add(p);
             }
@@ -52,8 +52,8 @@ public class ProdutoDao{
     }
 
     public void atualizar(Produto p) throws SQLException {
-        String sql = "UPDATE produtos SET nome=?, unidade=?, valor_unitario=?, qtd_min=?, qtd_max=?, qtd_atual=?, id_categoria=? " +
-                     "WHERE id=?";
+        String sql = "UPDATE produtos SET nome=?, unidade=?, valor_unitario=?, qtd_min=?, qtd_max=?, qtd_atual=?, id_categoria=? "
+                + "WHERE id=?";
         try (Connection conn = DB.get(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, p.getNome());
             ps.setString(2, p.getUnidade());
@@ -74,5 +74,4 @@ public class ProdutoDao{
             ps.executeUpdate();
         }
     }
-} 
-
+}

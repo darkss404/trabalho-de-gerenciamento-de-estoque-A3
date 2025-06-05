@@ -13,12 +13,12 @@ public class CategoriaDao {
 
     public void inserir(Categoria categoria) throws SQLException {
         String sql = "INSERT INTO categorias (nome, tamanho, embalagem) VALUES (?, ?, ?)";
-         try (PreparedStatement stmt = DB.prepareStatement(sql)) {
-        stmt.setString(1, categoria.getNome());
-        stmt.setString(2, categoria.getTamanho());
-        stmt.setString(3, categoria.getEmbalagem());
+        try (PreparedStatement stmt = DB.prepareStatement(sql)) {
+            stmt.setString(1, categoria.getNome());
+            stmt.setString(2, categoria.getTamanho());
+            stmt.setString(3, categoria.getEmbalagem());
 
-        stmt.executeUpdate();
+            stmt.executeUpdate();
         }
     }
 
@@ -29,7 +29,7 @@ public class CategoriaDao {
         try (Connection conn = DB.get(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Categoria categoria = new Categoria(
-                                        rs.getString("nome"));
+                        rs.getString("nome"));
                 lista.add(categoria);
             }
         }
@@ -43,7 +43,7 @@ public class CategoriaDao {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return new Categoria(
-                                        rs.getString("nome"));
+                        rs.getString("nome"));
             }
         }
         return null;
@@ -67,5 +67,4 @@ public class CategoriaDao {
             ps.executeUpdate();
         }
     }
-} 
-
+}
