@@ -5,7 +5,7 @@
 package visao;
 
 import java.util.ArrayList;
-import modelo.Produtos;
+import modelo.Produto;
 
 /**
  *
@@ -13,7 +13,7 @@ import modelo.Produtos;
  */
 public class FrmTelaCadastrada extends javax.swing.JFrame {
 
-    private ArrayList<Produtos> estoque;
+    private ArrayList<Produto> estoque;
 
     /**
      * Creates new form FrmTelaCadastrada
@@ -100,7 +100,7 @@ public class FrmTelaCadastrada extends javax.swing.JFrame {
     }//GEN-LAST:event_JBCadastrarProdutoActionPerformed
 
     private void JBCadastrarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarCategoriaActionPerformed
-        FrmCadastroCategoria objeto = new FrmCadastroCategoria();
+        CadastroCategoria objeto = new CadastroCategoria();
         objeto.setVisible(true);
     }//GEN-LAST:event_JBCadastrarCategoriaActionPerformed
 

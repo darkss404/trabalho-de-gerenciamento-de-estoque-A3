@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package visao;
 
 import java.util.ArrayList;
-import modelo.Produtos;
+import modelo.Produto;
 
-/**
- *
- * @author hdkil
- */
 public class FrmCadastroProduto extends javax.swing.JFrame {
-    private ArrayList<Produtos> estoque;
+    private ArrayList<Produto> estoque;
 
-    public FrmCadastroProduto(ArrayList<Produtos> estoque) {
+    public FrmCadastroProduto(ArrayList<Produto> estoque) {
         this.estoque = estoque;
         initComponents();
     }
@@ -187,7 +179,7 @@ public class FrmCadastroProduto extends javax.swing.JFrame {
         String unidade = (String) JBCUnidade.getSelectedItem();
         
         
-        Produtos produto = new Produtos(nome, codigo, categoria, quantidade, 1, 1000, preco, unidade, embalagem);
+        Produto produto = new Produto(nome, codigo, categoria, quantidade, 1, 1000);
         
         estoque.add(produto);
         

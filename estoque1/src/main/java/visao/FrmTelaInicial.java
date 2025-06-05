@@ -5,16 +5,16 @@
 package visao;
 
 import java.util.ArrayList;
-import modelo.Produtos;
+import modelo.Produto;
 
 /**
  *
  * @author hdkil
  */
 public class FrmTelaInicial extends javax.swing.JFrame {
-    private ArrayList<Produtos> estoque;
+    private ArrayList<Produto> estoque;
 
-    public FrmTelaInicial(ArrayList<Produtos> estoque) {
+    public FrmTelaInicial(ArrayList<Produto> estoque) {
         this.estoque = estoque;
         initComponents();
     }
@@ -140,7 +140,7 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBCadastrarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarCategoriaActionPerformed
-        FrmCadastroCategoria objeto = new FrmCadastroCategoria();
+        CadastroCategoria objeto = new CadastroCategoria();
         objeto.setVisible(true);     
     }//GEN-LAST:event_JBCadastrarCategoriaActionPerformed
 
@@ -180,7 +180,7 @@ public class FrmTelaInicial extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {   
-        ArrayList<Produtos> estoque = new ArrayList<>(); 
+        ArrayList<Produto> estoque = new ArrayList<>(); 
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
