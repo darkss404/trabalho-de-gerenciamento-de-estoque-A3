@@ -23,6 +23,10 @@ public class Categoria {
         this.embalagem = embalagem;
     }
 
+    public Categoria(int aInt, String string, String string0, String string1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     // Getters e Setters
     public int getId() {
         return id;
