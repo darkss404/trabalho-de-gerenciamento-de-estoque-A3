@@ -7,9 +7,6 @@ import modelo.Categoria;
 
 public class CategoriaDao {
 
-    public static List<Categoria> pegarCategorias() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     public void inserir(Categoria categoria) throws SQLException {
         String sql = "INSERT INTO categorias (nome, tamanho, embalagem) VALUES (?, ?, ?)";

@@ -66,12 +66,4 @@ public class Categoria {
     public String toString() {
         return nome + " (" + tamanho + ", " + embalagem + ")";
     }
-
-    public Object getIdCategoria() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getNomeCategoria() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
