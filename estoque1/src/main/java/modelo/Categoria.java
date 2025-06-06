@@ -7,8 +7,13 @@ public class Categoria {
     private String tamanho;
     private String embalagem;
 
-    public Categoria() {
-    }
+    public Categoria(int id, String nome, String tamanho, String embalagem) {
+    this.id = id;
+    this.nome = nome;
+    this.tamanho = tamanho;
+    this.embalagem = embalagem;
+}
+
 
     public Categoria(String nome) {
         this.id = id;
@@ -21,10 +26,7 @@ public class Categoria {
         this.nome = nome;
         this.tamanho = tamanho;
         this.embalagem = embalagem;
-    }
-
-    public Categoria(int aInt, String string, String string0, String string1) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
     }
 
     // Getters e Setters
@@ -63,5 +65,13 @@ public class Categoria {
     @Override
     public String toString() {
         return nome + " (" + tamanho + ", " + embalagem + ")";
+    }
+
+    public Object getIdCategoria() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getNomeCategoria() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
