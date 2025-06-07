@@ -64,6 +64,6 @@ public class Categoria {
 
     @Override
     public String toString() {
-        return nome + " (" + tamanho + ", " + embalagem + ")";
+        return nome;
     }
 }

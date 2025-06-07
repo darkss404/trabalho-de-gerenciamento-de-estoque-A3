@@ -149,7 +149,7 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         objeto.setVisible(true);      }//GEN-LAST:event_JBEditarProdutoActionPerformed
 
     private void JBCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarProdutoActionPerformed
-        FrmCadastroProduto objeto = new FrmCadastroProduto(this.estoque);
+        CadastrarProduto objeto = new CadastrarProduto();
         objeto.setVisible(true);
     }//GEN-LAST:event_JBCadastrarProdutoActionPerformed
 

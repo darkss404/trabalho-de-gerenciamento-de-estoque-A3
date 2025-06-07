@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
 import modelo.Produto;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.math.BigDecimal;
 import modelo.Categoria;
+import java.sql.*;
+import java.util.*;
 
 public class ProdutoDao {
 
@@ -21,7 +15,7 @@ public class ProdutoDao {
         try (Connection conn = DB.get(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, p.getNome());
             ps.setString(2, p.getUnidade());
-            ps.setBigDecimal(3, p.getValorUnitario());
+            ps.setDouble(3, p.getValorUnitario());
             ps.setInt(4, p.getQtdMin());
             ps.setInt(5, p.getQtdMax());
             ps.setInt(6, p.getQtdAtual());
@@ -36,14 +30,17 @@ public class ProdutoDao {
 
         try (Connection conn = DB.get(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                Categoria cat = categoriaDAO.buscarPorId(rs.getInt("id_categoria"));
+                int idCategoria = rs.getInt("id_categoria");
+                Categoria cat = categoriaDAO.buscarPorId(idCategoria);
 
                 Produto p = new Produto(
-                        rs.getString("nome"), rs.getInt("id"),
+                        rs.getString("nome"),
                         rs.getString("unidade"),
+                        rs.getDouble("valor_unitario"),
                         rs.getInt("qtd_min"),
                         rs.getInt("qtd_max"),
-                        rs.getInt("qtd_atual")
+                        rs.getInt("qtd_atual"),
+                        cat
                 );
                 lista.add(p);
             }
@@ -57,7 +54,7 @@ public class ProdutoDao {
         try (Connection conn = DB.get(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, p.getNome());
             ps.setString(2, p.getUnidade());
-            ps.setBigDecimal(3, p.getValorUnitario());
+            ps.setDouble(3, p.getValorUnitario());
             ps.setInt(4, p.getQtdMin());
             ps.setInt(5, p.getQtdMax());
             ps.setInt(6, p.getQtdAtual());
