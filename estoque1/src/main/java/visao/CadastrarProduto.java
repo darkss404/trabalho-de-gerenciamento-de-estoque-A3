@@ -162,7 +162,8 @@ public class CadastrarProduto extends javax.swing.JFrame {
 try {
     String nome = txtNome.getText();
     String unidade = txtUnidade.getText();
-    double valor = Double.parseDouble(txtValor.getText());
+    String valorTexto = txtValor.getText().replace(",", ".");
+    double valor = Double.parseDouble(valorTexto);
     int qtdMin = Integer.parseInt(txtQtdMin.getText());
     int qtdMax = Integer.parseInt(txtQtdMax.getText());
     int qtdAtual = Integer.parseInt(txtQtdAtual.getText());
