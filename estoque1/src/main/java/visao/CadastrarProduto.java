@@ -177,7 +177,11 @@ try {
     this.dispose(); // Fecha a janela
 } catch (Exception ex) {
     JOptionPane.showMessageDialog(this, "Erro: " + ex.getMessage());
-}        // TODO add your handling code here:
+    
+    FrmTelaInicial objeto = new FrmTelaInicial();
+        objeto.setVisible(true);
+        this.dispose();
+}        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**

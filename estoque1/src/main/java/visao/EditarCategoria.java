@@ -240,6 +240,10 @@ public class EditarCategoria extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Selecione uma categoria para excluir.");
         }
+        
+        FrmTelaInicial objeto = new FrmTelaInicial();
+        objeto.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_JBApagarActionPerformed
 
     /**

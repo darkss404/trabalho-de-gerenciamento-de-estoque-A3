@@ -24,7 +24,7 @@ public class DB {
     }
 
     public static PreparedStatement prepareStatement(String sql) throws SQLException {
-        Connection conn = get();  // pega a conexão
+        Connection conn = get();  
         return conn.prepareStatement(sql);
     }
 }

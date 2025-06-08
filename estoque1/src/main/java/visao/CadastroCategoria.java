@@ -144,6 +144,9 @@ public class CadastroCategoria extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Erro ao cadastrar categoria: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
 
+        FrmTelaInicial objeto = new FrmTelaInicial();
+        objeto.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_JBSalvarActionPerformed
 
     private void JTFEmbalagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmbalagemActionPerformed

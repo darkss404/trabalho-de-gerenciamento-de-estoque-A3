@@ -142,15 +142,18 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     private void JBCadastrarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarCategoriaActionPerformed
         CadastroCategoria objeto = new CadastroCategoria();
         objeto.setVisible(true);     
+        this.dispose();
     }//GEN-LAST:event_JBCadastrarCategoriaActionPerformed
 
     private void JBEditarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarProdutoActionPerformed
         FrmEditarProduto objeto = new FrmEditarProduto();
+        this.dispose();
         objeto.setVisible(true);      }//GEN-LAST:event_JBEditarProdutoActionPerformed
 
     private void JBCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarProdutoActionPerformed
         CadastrarProduto objeto = new CadastrarProduto();
         objeto.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_JBCadastrarProdutoActionPerformed
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
@@ -160,11 +163,13 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     private void JBEditarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarCategoriaActionPerformed
         EditarCategoria objeto = new EditarCategoria();
         objeto.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_JBEditarCategoriaActionPerformed
 
     private void JBListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListaActionPerformed
     FrmListadePrecos objeto = new FrmListadePrecos();
-        objeto.setVisible(true);    // TODO add your handling code here:
+        objeto.setVisible(true);    
+        this.dispose();
     }//GEN-LAST:event_JBListaActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -173,7 +178,8 @@ public class FrmTelaInicial extends javax.swing.JFrame {
 
     private void JBBalançoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBalançoActionPerformed
      FrmBalanco objeto = new FrmBalanco();
-        objeto.setVisible(true);   // TODO add your handling code here:
+        objeto.setVisible(true);   
+        this.dispose();
     }//GEN-LAST:event_JBBalançoActionPerformed
 
     /**
