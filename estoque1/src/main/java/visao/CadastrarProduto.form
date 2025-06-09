@@ -28,11 +28,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -64,6 +59,13 @@
                       <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="JBVoltar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -97,9 +99,12 @@
               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="txtQtdAtual" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JBVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -107,35 +112,35 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Categoria"/>
+        <Property name="text" type="java.lang.String" value="Categoria:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNome">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="nome"/>
+        <Property name="text" type="java.lang.String" value="Nome:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtValor">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="preco"/>
+        <Property name="text" type="java.lang.String" value="Valor Unit&#xe1;rio:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUnidade">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="unidade"/>
+        <Property name="text" type="java.lang.String" value="Unidade:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtQtdMin">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="qt min"/>
+        <Property name="text" type="java.lang.String" value="Qt min:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cmbCategoria">
@@ -145,24 +150,32 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="qt atual"/>
+        <Property name="text" type="java.lang.String" value="Qt atual:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtQtdAtual">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="qt max"/>
+        <Property name="text" type="java.lang.String" value="Qt max:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtQtdMax">
     </Component>
     <Component class="javax.swing.JButton" name="btnSalvar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="salvar"/>
+        <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="JBVoltar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBVoltarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

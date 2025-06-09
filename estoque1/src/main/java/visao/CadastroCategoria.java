@@ -38,7 +38,7 @@ public class CadastroCategoria extends javax.swing.JFrame {
         JTFTamanho = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         JTFEmbalagem = new javax.swing.JTextField();
-        JBCancelar = new javax.swing.JButton();
+        JBVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +59,7 @@ public class CadastroCategoria extends javax.swing.JFrame {
 
         jLabel2.setText("Tamanho:");
 
-        jLabel3.setText("embalagem:");
+        jLabel3.setText("Embalagem:");
 
         JTFEmbalagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +67,12 @@ public class CadastroCategoria extends javax.swing.JFrame {
             }
         });
 
-        JBCancelar.setText("Cancelar");
+        JBVoltar.setText("Voltar");
+        JBVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,7 +82,7 @@ public class CadastroCategoria extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(JBCancelar)
+                        .addComponent(JBVoltar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JBSalvar))
                     .addGroup(layout.createSequentialGroup()
@@ -109,7 +114,7 @@ public class CadastroCategoria extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBSalvar)
-                    .addComponent(JBCancelar))
+                    .addComponent(JBVoltar))
                 .addContainerGap())
         );
 
@@ -153,6 +158,12 @@ public class CadastroCategoria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFEmbalagemActionPerformed
 
+    private void JBVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVoltarActionPerformed
+FrmTelaInicial objeto = new FrmTelaInicial();
+        objeto.setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_JBVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -189,8 +200,8 @@ public class CadastroCategoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBCancelar;
     private javax.swing.JButton JBSalvar;
+    private javax.swing.JButton JBVoltar;
     private javax.swing.JTextField JTFEmbalagem;
     private javax.swing.JTextField JTFNome;
     private javax.swing.JTextField JTFTamanho;

@@ -53,6 +53,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtQtdMax = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
+        JBVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -61,24 +62,31 @@ public class CadastrarProduto extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Categoria");
+        jLabel1.setText("Categoria:");
 
-        jLabel2.setText("nome");
+        jLabel2.setText("Nome:");
 
-        jLabel3.setText("preco");
+        jLabel3.setText("Valor Unitário:");
 
-        jLabel4.setText("unidade");
+        jLabel4.setText("Unidade:");
 
-        jLabel5.setText("qt min");
+        jLabel5.setText("Qt min:");
 
-        jLabel6.setText("qt atual");
+        jLabel6.setText("Qt atual:");
 
-        jLabel7.setText("qt max");
+        jLabel7.setText("Qt max:");
 
-        btnSalvar.setText("salvar");
+        btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
+            }
+        });
+
+        JBVoltar.setText("Voltar");
+        JBVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBVoltarActionPerformed(evt);
             }
         });
 
@@ -86,10 +94,6 @@ public class CadastrarProduto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalvar)
-                .addGap(30, 30, 30))
             .addGroup(layout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,20 +104,27 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtQtdMin)
                             .addComponent(txtUnidade)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtQtdAtual, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtQtdMax, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbCategoria, javax.swing.GroupLayout.Alignment.LEADING, 0, 206, Short.MAX_VALUE)
                             .addComponent(txtNome)
                             .addComponent(txtValor)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(126, 126, 126))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JBVoltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalvar)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,9 +156,11 @@ public class CadastrarProduto extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtQtdAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnSalvar)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvar)
+                    .addComponent(JBVoltar))
+                .addContainerGap())
         );
 
         setSize(new java.awt.Dimension(493, 417));
@@ -183,6 +196,12 @@ try {
         this.dispose();
 }        
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void JBVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVoltarActionPerformed
+FrmTelaInicial objeto = new FrmTelaInicial();
+        objeto.setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_JBVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,6 +239,7 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBVoltar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<Categoria> cmbCategoria;
     private javax.swing.JLabel jLabel1;

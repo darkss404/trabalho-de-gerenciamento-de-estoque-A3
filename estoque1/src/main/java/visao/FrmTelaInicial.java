@@ -43,7 +43,7 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         JBBalanço = new javax.swing.JMenuItem();
         JBLista = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        JBRelatorios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,13 +112,13 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         });
         jMenu2.add(JBLista);
 
-        jMenuItem2.setText("Relátorios");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        JBRelatorios.setText("Relátorio Produtos Por Categoria");
+        JBRelatorios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                JBRelatoriosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jMenu2.add(JBRelatorios);
 
         jMenuBar1.add(jMenu2);
 
@@ -172,9 +172,11 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_JBListaActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void JBRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBRelatoriosActionPerformed
+       FrmRelatorios objeto = new FrmRelatorios();
+        objeto.setVisible(true);   
+        this.dispose(); // TODO add your handling code here:
+    }//GEN-LAST:event_JBRelatoriosActionPerformed
 
     private void JBBalançoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBalançoActionPerformed
      FrmBalanco objeto = new FrmBalanco();
@@ -202,10 +204,10 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem JBEditarCategoria;
     private javax.swing.JMenuItem JBEditarProduto;
     private javax.swing.JMenuItem JBLista;
+    private javax.swing.JMenuItem JBRelatorios;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

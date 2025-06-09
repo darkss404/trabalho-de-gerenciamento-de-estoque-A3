@@ -65,6 +65,7 @@ public class EditarCategoria extends javax.swing.JFrame {
         JTFEmbalagem = new javax.swing.JTextField();
         JBAlterar = new javax.swing.JButton();
         JBApagar = new javax.swing.JButton();
+        JBVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -102,7 +103,7 @@ public class EditarCategoria extends javax.swing.JFrame {
             }
         });
 
-        JBAlterar.setText("Alterar");
+        JBAlterar.setText("Salvar");
         JBAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBAlterarActionPerformed(evt);
@@ -116,6 +117,13 @@ public class EditarCategoria extends javax.swing.JFrame {
             }
         });
 
+        JBVoltar.setText("Voltar");
+        JBVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBVoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,9 +132,8 @@ public class EditarCategoria extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(JBApagar)
-                        .addGap(39, 39, 39)
+                        .addComponent(JBVoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JBAlterar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -135,10 +142,12 @@ public class EditarCategoria extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(JTFEmbalagem, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(JTFTamanho, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(JTFNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(JBApagar)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(JTFEmbalagem, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTFTamanho, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTFNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -162,7 +171,8 @@ public class EditarCategoria extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBAlterar)
-                    .addComponent(JBApagar))
+                    .addComponent(JBApagar)
+                    .addComponent(JBVoltar))
                 .addContainerGap())
         );
 
@@ -246,6 +256,12 @@ public class EditarCategoria extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_JBApagarActionPerformed
 
+    private void JBVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVoltarActionPerformed
+FrmTelaInicial objeto = new FrmTelaInicial();
+        objeto.setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_JBVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -284,6 +300,7 @@ public class EditarCategoria extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBAlterar;
     private javax.swing.JButton JBApagar;
+    private javax.swing.JButton JBVoltar;
     private javax.swing.JTextField JTFEmbalagem;
     private javax.swing.JTextField JTFNome;
     private javax.swing.JTextField JTFTamanho;

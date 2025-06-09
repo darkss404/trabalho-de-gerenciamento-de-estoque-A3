@@ -25,7 +25,7 @@ public class ProdutoDao {
     }
 
     public List<Produto> listar() throws SQLException {
-        String sql = "SELECT * FROM produtos";
+        String sql = "SELECT * FROM produtos ORDER BY nome";
         List<Produto> lista = new ArrayList<>();
 
         try (Connection conn = DB.get(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {

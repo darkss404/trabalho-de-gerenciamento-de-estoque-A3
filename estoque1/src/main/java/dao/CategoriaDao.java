@@ -22,7 +22,7 @@ public class CategoriaDao {
     }
 
     public List<Categoria> listar() throws SQLException {
-        String sql = "SELECT * FROM categorias";
+        String sql = "SELECT * FROM categorias ORDER BY nome";
         List<Categoria> lista = new ArrayList<>();
 
         try (Connection conn = DB.get();

@@ -29,7 +29,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="JBCancelar" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBVoltar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="JBSalvar" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -67,7 +67,7 @@
               <EmptySpace pref="121" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="JBSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="JBCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JBVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -102,7 +102,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="embalagem:"/>
+        <Property name="text" type="java.lang.String" value="Embalagem:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JTFEmbalagem">
@@ -110,10 +110,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFEmbalagemActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="JBCancelar">
+    <Component class="javax.swing.JButton" name="JBVoltar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cancelar"/>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBVoltarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
