@@ -11,7 +11,7 @@ Este repositório contém o desenvolvimento de um sistema de gerenciamento de es
   <tr>
     <td>Hector Dartagnan Viana de Brum</td>
     <td>10725116554</td>
-    <td>Dartagnan</td>
+    <td>Dartagnan/Eudarta/hdkil</td>
   </tr>
   <tr>
     <td>Iago bastos de oliveira</td>
