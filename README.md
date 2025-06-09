@@ -103,4 +103,8 @@ quantidade máxima e a quantidade em estoque.</td>
     <td>Relatório da quantidade de produtos por categoria contento o nome da categoria e quantidade de
 produtos distintos.</td>
   </tr>
- 
+</table>
+<h2>🔗Requisitos Não Funcionais:</h2>
+- Interface simples e intuitiva<br>
+- Acessível mesmo para usuários sem conhecimentos técnicos<br>
+- O sistema é compatível com o banco de dados MYSQL<br>
