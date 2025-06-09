@@ -1,6 +1,7 @@
 package modelo;
 
 public class Produto {
+
     private String nome;
     private String unidade; // "kg", "lt", "un"
     private Double valorUnitario;
@@ -9,10 +10,11 @@ public class Produto {
     private int qtdAtual;
     private Categoria categoria;
 
-    public Produto() {}
+    public Produto() {
+    }
 
     public Produto(String nome, String unidade, Double valorUnitario,
-                   int qtdMin, int qtdMax, int qtdAtual, Categoria categoria) {
+            int qtdMin, int qtdMax, int qtdAtual, Categoria categoria) {
         this.nome = nome;
         this.unidade = unidade;
         this.valorUnitario = valorUnitario;
@@ -23,26 +25,61 @@ public class Produto {
     }
 
     // Getters e Setters
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public String getNome() {
+        return nome;
+    }
 
-    public String getUnidade() { return unidade; }
-    public void setUnidade(String unidade) { this.unidade = unidade; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public Double getValorUnitario() { return valorUnitario; }
-    public void setValorUnitario(Double valorUnitario) { this.valorUnitario = valorUnitario; }
+    public String getUnidade() {
+        return unidade;
+    }
 
-    public int getQtdMin() { return qtdMin; }
-    public void setQtdMin(int qtdMin) { this.qtdMin = qtdMin; }
+    public void setUnidade(String unidade) {
+        this.unidade = unidade;
+    }
 
-    public int getQtdMax() { return qtdMax; }
-    public void setQtdMax(int qtdMax) { this.qtdMax = qtdMax; }
+    public Double getValorUnitario() {
+        return valorUnitario;
+    }
 
-    public int getQtdAtual() { return qtdAtual; }
-    public void setQtdAtual(int qtdAtual) { this.qtdAtual = qtdAtual; }
+    public void setValorUnitario(Double valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
 
-    public Categoria getCategoria() { return categoria; }
-    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+    public int getQtdMin() {
+        return qtdMin;
+    }
+
+    public void setQtdMin(int qtdMin) {
+        this.qtdMin = qtdMin;
+    }
+
+    public int getQtdMax() {
+        return qtdMax;
+    }
+
+    public void setQtdMax(int qtdMax) {
+        this.qtdMax = qtdMax;
+    }
+
+    public int getQtdAtual() {
+        return qtdAtual;
+    }
+
+    public void setQtdAtual(int qtdAtual) {
+        this.qtdAtual = qtdAtual;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     @Override
     public String toString() {

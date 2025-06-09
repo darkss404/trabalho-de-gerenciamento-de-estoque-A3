@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
 import java.util.ArrayList;
@@ -11,14 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author hdkil
- */
 public class RelatorioCategoriasDao {
+
     public List<Object[]> listarQuantidadeProdutosPorCategoria() {
-    List<Object[]> lista = new ArrayList<>();
-    String sql = """
+        List<Object[]> lista = new ArrayList<>();
+        String sql = """
         SELECT c.nome AS categorias, COUNT(p.id) AS total_produtos
         FROM categorias c
         LEFT JOIN produtos p ON p.id_categoria = c.id
@@ -26,20 +19,18 @@ public class RelatorioCategoriasDao {
         ORDER BY c.nome;
     """;
 
-    try (Connection conn = DB.get();
-         PreparedStatement stmt = conn.prepareStatement(sql);
-         ResultSet rs = stmt.executeQuery()) {
+        try (Connection conn = DB.get(); PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
 
-        while (rs.next()) {
-            String nomeCategoria = rs.getString("categorias");
-            int totalProdutos = rs.getInt("total_produtos");
-            lista.add(new Object[]{nomeCategoria, totalProdutos});
+            while (rs.next()) {
+                String nomeCategoria = rs.getString("categorias");
+                int totalProdutos = rs.getInt("total_produtos");
+                lista.add(new Object[]{nomeCategoria, totalProdutos});
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-    } catch (SQLException e) {
-        e.printStackTrace();
+        return lista;
     }
-
-    return lista;
-}
 }

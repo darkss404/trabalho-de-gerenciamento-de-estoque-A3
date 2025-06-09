@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package visao;
+
 import dao.CategoriaDao;
 import dao.ProdutoDao;
 import modelo.Categoria;
@@ -13,27 +10,26 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
- 
-public class CadastrarProduto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastrarProduto
-     */
-    public CadastrarProduto() {
+public class FrmCadastrarProduto extends javax.swing.JFrame {
+
+    public FrmCadastrarProduto() {
         initComponents();
     }
-   private void carregarCategorias() {
-    CategoriaDao dao = new CategoriaDao();
-    List<Categoria> lista = null;
+
+    private void carregarCategorias() {
+        CategoriaDao dao = new CategoriaDao();
+        List<Categoria> lista = null;
         try {
             lista = dao.listar();
         } catch (SQLException ex) {
-            Logger.getLogger(CadastrarProduto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrmCadastrarProduto.class.getName()).log(Level.SEVERE, null, ex);
         }
-    for (Categoria cat : lista) {
-        cmbCategoria.addItem(cat);
+        for (Categoria cat : lista) {
+            cmbCategoria.addItem(cat);
+        }
     }
-}
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -168,72 +164,46 @@ public class CadastrarProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
- carregarCategorias();   // TODO add your handling code here:
+        carregarCategorias();
     }//GEN-LAST:event_formWindowOpened
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-try {
-    String nome = txtNome.getText();
-    String unidade = txtUnidade.getText();
-    String valorTexto = txtValor.getText().replace(",", ".");
-    double valor = Double.parseDouble(valorTexto);
-    int qtdMin = Integer.parseInt(txtQtdMin.getText());
-    int qtdMax = Integer.parseInt(txtQtdMax.getText());
-    int qtdAtual = Integer.parseInt(txtQtdAtual.getText());
-    Categoria categoria = (Categoria) cmbCategoria.getSelectedItem();
+        try {
+            String nome = txtNome.getText();
+            String unidade = txtUnidade.getText();
+            String valorTexto = txtValor.getText().replace(",", ".");
+            double valor = Double.parseDouble(valorTexto);
+            int qtdMin = Integer.parseInt(txtQtdMin.getText());
+            int qtdMax = Integer.parseInt(txtQtdMax.getText());
+            int qtdAtual = Integer.parseInt(txtQtdAtual.getText());
+            Categoria categoria = (Categoria) cmbCategoria.getSelectedItem();
 
-    Produto produto = new Produto(nome, unidade, valor, qtdMin, qtdMax, qtdAtual, categoria);
-    ProdutoDao dao = new ProdutoDao();
-    dao.inserir(produto);
+            Produto produto = new Produto(nome, unidade, valor, qtdMin, qtdMax, qtdAtual, categoria);
+            ProdutoDao dao = new ProdutoDao();
+            dao.inserir(produto);
 
-    JOptionPane.showMessageDialog(this, "Produto salvo com sucesso!");
-    this.dispose(); // Fecha a janela
-} catch (Exception ex) {
-    JOptionPane.showMessageDialog(this, "Erro: " + ex.getMessage());
-    
-    FrmTelaInicial objeto = new FrmTelaInicial();
-        objeto.setVisible(true);
-        this.dispose();
-}        
+            JOptionPane.showMessageDialog(this, "Produto salvo com sucesso!");
+            this.dispose();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro: " + ex.getMessage());
+
+            FrmTelaInicial objeto = new FrmTelaInicial();
+            objeto.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void JBVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVoltarActionPerformed
-FrmTelaInicial objeto = new FrmTelaInicial();
+        FrmTelaInicial objeto = new FrmTelaInicial();
         objeto.setVisible(true);
-        this.dispose();        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_JBVoltarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastrarProduto().setVisible(true);
+                new FrmCadastrarProduto().setVisible(true);
             }
         });
     }

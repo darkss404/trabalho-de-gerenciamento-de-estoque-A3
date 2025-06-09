@@ -8,12 +8,11 @@ public class Categoria {
     private String embalagem;
 
     public Categoria(int id, String nome, String tamanho, String embalagem) {
-    this.id = id;
-    this.nome = nome;
-    this.tamanho = tamanho;
-    this.embalagem = embalagem;
-}
-
+        this.id = id;
+        this.nome = nome;
+        this.tamanho = tamanho;
+        this.embalagem = embalagem;
+    }
 
     public Categoria(String nome) {
         this.id = id;
@@ -26,7 +25,7 @@ public class Categoria {
         this.nome = nome;
         this.tamanho = tamanho;
         this.embalagem = embalagem;
-    
+
     }
 
     // Getters e Setters

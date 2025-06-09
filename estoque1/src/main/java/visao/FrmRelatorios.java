@@ -6,10 +6,11 @@ import javax.swing.table.DefaultTableModel;
 
 public class FrmRelatorios extends javax.swing.JFrame {
 
-   public FrmRelatorios() {
-    initComponents();
-    carregarTabela();
-}
+    public FrmRelatorios() {
+        initComponents();
+        carregarTabela();
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -56,22 +57,22 @@ public class FrmRelatorios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
- 
+
     }//GEN-LAST:event_formWindowOpened
 
-   private void carregarTabela() {
+    private void carregarTabela() {
         RelatorioCategoriasDao dao = new RelatorioCategoriasDao();
         List<Object[]> dados = dao.listarQuantidadeProdutosPorCategoria();
 
         DefaultTableModel modelo = (DefaultTableModel) JTCategorias.getModel();
-        modelo.setRowCount(0); // limpa a tabela antes de preencher
+        modelo.setRowCount(0);
 
         for (Object[] linha : dados) {
             modelo.addRow(linha);
         }
-   }
+    }
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -93,7 +94,7 @@ public class FrmRelatorios extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmRelatorios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-  
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FrmRelatorios().setVisible(true);
@@ -105,6 +106,5 @@ public class FrmRelatorios extends javax.swing.JFrame {
     private javax.swing.JTable JTCategorias;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-
 
 }
