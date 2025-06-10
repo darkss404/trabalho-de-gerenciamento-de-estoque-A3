@@ -183,7 +183,14 @@ public class FrmCadastrarProduto extends javax.swing.JFrame {
             dao.inserir(produto);
 
             JOptionPane.showMessageDialog(this, "Produto salvo com sucesso!");
-            this.dispose();
+            txtNome.setText("");
+            txtUnidade.setText("");
+            txtValor.setText("");
+            txtQtdMin.setText("");
+            txtQtdMax.setText("");
+            txtQtdAtual.setText("");
+            cmbCategoria.setSelectedIndex(0);
+            
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Erro: " + ex.getMessage());
 

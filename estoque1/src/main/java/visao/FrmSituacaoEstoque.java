@@ -14,6 +14,7 @@ public class FrmSituacaoEstoque extends javax.swing.JFrame {
 
     public FrmSituacaoEstoque() {
         initComponents();
+        this.setLocationRelativeTo(null);
         DefaultTableModel modelo = (DefaultTableModel) JTable1.getModel();
         JTable1.setRowSorter(new javax.swing.table.TableRowSorter<>(modelo));
         preencherSituacaoEstoque();

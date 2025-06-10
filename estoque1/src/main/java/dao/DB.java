@@ -9,7 +9,7 @@ public class DB {
 
     private static final String URL = "jdbc:mysql://localhost:3306/estoque?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private static final String USUARIO = "root";
-    private static final String SENHA = "Senha aqui"; //Mude a senha de acordo com a senha do seu sql
+    private static final String SENHA = "ROOT"; //Mude a senha de acordo com a senha do seu sql
 
     public static Connection get() throws SQLException {
         return DriverManager.getConnection(URL, USUARIO, SENHA);
