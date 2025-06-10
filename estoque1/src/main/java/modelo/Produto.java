@@ -1,7 +1,8 @@
 package modelo;
 
 public class Produto {
-
+    
+    private int id;
     private String nome;
     private String unidade; // "kg", "lt", "un"
     private Double valorUnitario;
@@ -86,7 +87,12 @@ public class Produto {
         return nome + " (" + unidade + ")";
     }
 
-    public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+public int getId() {
+    return id;
 }
+
+public void setId(int id) {
+    this.id = id;
+}
+}
+

@@ -29,6 +29,7 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         JBEditarCategoria = new javax.swing.JMenuItem();
         JBEditarProduto = new javax.swing.JMenuItem();
+        JBEntradaSaida = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         JBBalanço = new javax.swing.JMenuItem();
         JBLista = new javax.swing.JMenuItem();
@@ -83,6 +84,14 @@ public class FrmTelaInicial extends javax.swing.JFrame {
             }
         });
         jMenu4.add(JBEditarProduto);
+
+        JBEntradaSaida.setText("Entrada e saida");
+        JBEntradaSaida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBEntradaSaidaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(JBEntradaSaida);
 
         jMenuBar1.add(jMenu4);
 
@@ -190,6 +199,12 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_JBSituacaoEstoqueActionPerformed
 
+    private void JBEntradaSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEntradaSaidaActionPerformed
+        FrmEntradaSaida objeto = new FrmEntradaSaida();
+        objeto.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_JBEntradaSaidaActionPerformed
+
     public static void main(String args[]) {
         ArrayList<Produto> estoque = new ArrayList<>();
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -206,6 +221,7 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem JBCadastrarProduto;
     private javax.swing.JMenuItem JBEditarCategoria;
     private javax.swing.JMenuItem JBEditarProduto;
+    private javax.swing.JMenuItem JBEntradaSaida;
     private javax.swing.JMenuItem JBLista;
     private javax.swing.JMenuItem JBRelatorios;
     private javax.swing.JMenuItem JBSituacaoEstoque;
