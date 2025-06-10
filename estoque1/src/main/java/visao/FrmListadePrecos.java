@@ -10,6 +10,8 @@ public class FrmListadePrecos extends javax.swing.JFrame {
 
     public FrmListadePrecos() {
         initComponents();
+        DefaultTableModel modelo = (DefaultTableModel) JBTabela.getModel();
+        JBTabela.setRowSorter(new javax.swing.table.TableRowSorter<>(modelo));
         preencherTabela();
     }
 
@@ -27,6 +29,7 @@ public class FrmListadePrecos extends javax.swing.JFrame {
                     p.getValorUnitario(),
                     p.getUnidade(),
                     p.getCategoria().getNome()
+                    
                 });
             }
 
