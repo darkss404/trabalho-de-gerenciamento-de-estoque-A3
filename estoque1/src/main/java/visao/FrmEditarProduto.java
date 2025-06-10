@@ -18,7 +18,7 @@ public class FrmEditarProduto extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         JBAlterar = new javax.swing.JButton();
         JBApagar = new javax.swing.JButton();
-        JBCancelar = new javax.swing.JButton();
+        voltarEditarProduto = new javax.swing.JButton();
         JTFCategoria = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         JTableEditarProduto = new javax.swing.JTable();
@@ -56,10 +56,10 @@ public class FrmEditarProduto extends javax.swing.JFrame {
             }
         });
 
-        JBCancelar.setText("Cancelar");
-        JBCancelar.addActionListener(new java.awt.event.ActionListener() {
+        voltarEditarProduto.setText("Voltar");
+        voltarEditarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBCancelarActionPerformed(evt);
+                voltarEditarProdutoActionPerformed(evt);
             }
         });
 
@@ -101,7 +101,7 @@ public class FrmEditarProduto extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(JBCancelar)
+                        .addComponent(voltarEditarProduto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JBApagar)
                         .addGap(18, 18, 18)
@@ -180,7 +180,7 @@ public class FrmEditarProduto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBAlterar)
                     .addComponent(JBApagar)
-                    .addComponent(JBCancelar))
+                    .addComponent(voltarEditarProduto))
                 .addContainerGap())
         );
 
@@ -204,9 +204,10 @@ public class FrmEditarProduto extends javax.swing.JFrame {
 
     }//GEN-LAST:event_JBApagarActionPerformed
 
-    private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_JBCancelarActionPerformed
+    private void voltarEditarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarEditarProdutoActionPerformed
+        new visao.FrmTelaInicial().setVisible(true);
+        this.dispose(); // Fecha a tela atual
+    }//GEN-LAST:event_voltarEditarProdutoActionPerformed
 
     public static void main(String args[]) {
 
@@ -220,7 +221,6 @@ public class FrmEditarProduto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBAlterar;
     private javax.swing.JButton JBApagar;
-    private javax.swing.JButton JBCancelar;
     private javax.swing.JTextField JTFCategoria;
     private javax.swing.JTextField JTFNome;
     private javax.swing.JTextField JTFQtEst;
@@ -237,5 +237,6 @@ public class FrmEditarProduto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton voltarEditarProduto;
     // End of variables declaration//GEN-END:variables
 }

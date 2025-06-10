@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class DB {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/estoque";
+    private static final String URL = "jdbc:mysql://localhost:3306/estoque?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private static final String USUARIO = "root";
-    private static final String SENHA = "1234";
+    private static final String SENHA = "ROOT";
 
     public static Connection get() throws SQLException {
         return DriverManager.getConnection(URL, USUARIO, SENHA);

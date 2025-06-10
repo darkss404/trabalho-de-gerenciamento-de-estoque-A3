@@ -17,6 +17,7 @@ public class FrmRelatorios extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         JTCategorias = new javax.swing.JTable();
+        voltarRelatorios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -35,21 +36,32 @@ public class FrmRelatorios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(JTCategorias);
 
+        voltarRelatorios.setText("Voltar");
+        voltarRelatorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarRelatoriosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(voltarRelatorios)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(voltarRelatorios)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(516, 508));
@@ -59,6 +71,12 @@ public class FrmRelatorios extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
     }//GEN-LAST:event_formWindowOpened
+
+    private void voltarRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarRelatoriosActionPerformed
+        // TODO add your handling code here:
+        new visao.FrmTelaInicial().setVisible(true);
+        this.dispose(); // Fecha a tela atual
+    }//GEN-LAST:event_voltarRelatoriosActionPerformed
 
     private void carregarTabela() {
         RelatorioCategoriasDao dao = new RelatorioCategoriasDao();
@@ -105,6 +123,7 @@ public class FrmRelatorios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable JTCategorias;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton voltarRelatorios;
     // End of variables declaration//GEN-END:variables
 
 }
