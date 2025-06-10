@@ -1,5 +1,10 @@
 package visao;
 
+import dao.DB;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+
 public class FrmEditarProduto extends javax.swing.JFrame {
 
     public FrmEditarProduto() {
@@ -189,6 +194,54 @@ public class FrmEditarProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAlterarActionPerformed
+    int linhaSelecionada = JTableEditarProduto.getSelectedRow();
+    
+    if (linhaSelecionada == -1) {
+        JOptionPane.showMessageDialog(null, "Selecione um produto para alterar.");
+        return;
+    }
+
+    try {
+        // Pega o ID da primeira coluna (ou adapte se estiver em outra posição)
+        int idProduto = (int) JTableEditarProduto.getValueAt(linhaSelecionada, 0);
+
+        String nome = JTFNome.getText();
+        String categoria = JTFCategoria.getText();
+        double valor = Double.parseDouble(JTFValor.getText());
+        int qtMax = Integer.parseInt(JTFQtMax.getText());
+        int qtMin = Integer.parseInt(JTFQtMin.getText());
+        int qtEst = Integer.parseInt(JTFQtEst.getText());
+        String unidade = JTFUnidade.getText();
+
+        // Faz o UPDATE no banco
+        Connection conn = DB.get();
+        String sql = "UPDATE produtos SET nome = ?, id_categoria = ?, valor_unitario = ?, qtd_max = ?, qtd_min = ?, qtd_estoque = ?, unidade_medida = ? WHERE id = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, nome);
+        stmt.setInt(2, Integer.parseInt(categoria)); // Se categoria for o ID — se for nome, precisa buscar o ID antes
+        stmt.setDouble(3, valor);
+        stmt.setInt(4, qtMax);
+        stmt.setInt(5, qtMin);
+        stmt.setInt(6, qtEst);
+        stmt.setString(7, unidade);
+        stmt.setInt(8, idProduto);
+
+        int linhasAfetadas = stmt.executeUpdate();
+
+        if (linhasAfetadas > 0) {
+            JOptionPane.showMessageDialog(null, "Produto atualizado com sucesso!");
+            carregarProdutos(); // Atualiza a tabela
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar o produto.");
+        }
+
+        stmt.close();
+        conn.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+        e.printStackTrace();
+    }
 
     }//GEN-LAST:event_JBAlterarActionPerformed
 
@@ -239,4 +292,8 @@ public class FrmEditarProduto extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton voltarEditarProduto;
     // End of variables declaration//GEN-END:variables
+
+    private void carregarProdutos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
