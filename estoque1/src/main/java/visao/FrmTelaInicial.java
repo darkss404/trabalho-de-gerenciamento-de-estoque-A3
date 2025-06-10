@@ -21,6 +21,7 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         JBCadastrarCategoria = new javax.swing.JMenuItem();
@@ -32,6 +33,9 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         JBBalanço = new javax.swing.JMenuItem();
         JBLista = new javax.swing.JMenuItem();
         JBRelatorios = new javax.swing.JMenuItem();
+        JBSituacaoEstoque = new javax.swing.JMenuItem();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,6 +112,14 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         });
         jMenu2.add(JBRelatorios);
 
+        JBSituacaoEstoque.setText("Situação do estoque");
+        JBSituacaoEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBSituacaoEstoqueActionPerformed(evt);
+            }
+        });
+        jMenu2.add(JBSituacaoEstoque);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -172,6 +184,12 @@ public class FrmTelaInicial extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_JBBalançoActionPerformed
 
+    private void JBSituacaoEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSituacaoEstoqueActionPerformed
+        FrmSituacaoEstoque objeto = new  FrmSituacaoEstoque();
+        objeto.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_JBSituacaoEstoqueActionPerformed
+
     public static void main(String args[]) {
         ArrayList<Produto> estoque = new ArrayList<>();
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -190,6 +208,8 @@ public class FrmTelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem JBEditarProduto;
     private javax.swing.JMenuItem JBLista;
     private javax.swing.JMenuItem JBRelatorios;
+    private javax.swing.JMenuItem JBSituacaoEstoque;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
