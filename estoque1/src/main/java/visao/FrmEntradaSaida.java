@@ -21,6 +21,7 @@ public class FrmEntradaSaida extends javax.swing.JFrame {
     
     public FrmEntradaSaida() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
