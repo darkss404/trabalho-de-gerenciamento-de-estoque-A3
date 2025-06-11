@@ -14,12 +14,11 @@ public class Categoria {
         this.embalagem = embalagem;
     }
 
-    public Categoria(String nome) {
-        this.id = id;
-        this.nome = nome;
-        this.tamanho = tamanho;
-        this.embalagem = embalagem;
-    }
+   public Categoria(String nome) {
+    this.nome = nome;
+    this.tamanho = "";
+    this.embalagem = "";
+}
 
     public Categoria(String nome, String tamanho, String embalagem) {
         this.nome = nome;

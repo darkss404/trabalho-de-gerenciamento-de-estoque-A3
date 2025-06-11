@@ -1,7 +1,7 @@
 package modelo;
 
 public class Produto {
-    
+
     private int id;
     private String nome;
     private String unidade; // "kg", "lt", "un"
@@ -11,11 +11,21 @@ public class Produto {
     private int qtdAtual;
     private Categoria categoria;
 
-    public Produto() {
+    // Construtor completo
+    public Produto(int id, String nome, String unidade, Double valorUnitario, int qtdMin, int qtdMax, int qtdAtual, Categoria categoria) {
+        this.id = id;
+        this.nome = nome;
+        this.unidade = unidade;
+        this.valorUnitario = valorUnitario;
+        this.qtdMin = qtdMin;
+        this.qtdMax = qtdMax;
+        this.qtdAtual = qtdAtual;
+        this.categoria = categoria;
     }
 
+    // Construtor parcial (se necessário)
     public Produto(String nome, String unidade, Double valorUnitario,
-            int qtdMin, int qtdMax, int qtdAtual, Categoria categoria) {
+                   int qtdMin, int qtdMax, int qtdAtual, Categoria categoria) {
         this.nome = nome;
         this.unidade = unidade;
         this.valorUnitario = valorUnitario;
@@ -26,6 +36,14 @@ public class Produto {
     }
 
     // Getters e Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -82,17 +100,30 @@ public class Produto {
         this.categoria = categoria;
     }
 
+    // Para retornar apenas o nome da categoria como String
+    public String getNomeCategoria() {
+        return categoria != null ? categoria.getNome() : "Sem categoria";
+    }
+
     @Override
     public String toString() {
         return nome + " (" + unidade + ")";
     }
 
-public int getId() {
-    return id;
-}
+    // Compatibilização com seus métodos antigos (pode ser removido depois)
+    public Double getValor() {
+        return getValorUnitario();
+    }
 
-public void setId(int id) {
-    this.id = id;
-}
-}
+    public int getQtMax() {
+        return getQtdMax();
+    }
 
+    public int getQtEstoque() {
+        return getQtdAtual();
+    }
+
+    public int getQtMin() {
+        return getQtdMin();
+    }
+}

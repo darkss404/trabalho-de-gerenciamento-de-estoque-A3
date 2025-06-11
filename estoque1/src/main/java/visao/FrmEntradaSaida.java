@@ -70,6 +70,11 @@ public class FrmEntradaSaida extends javax.swing.JFrame {
         jLabel4.setText("Quantidade:");
 
         JCBTipoDado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Entrada", "Saida" }));
+        JCBTipoDado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBTipoDadoActionPerformed(evt);
+            }
+        });
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +151,7 @@ public class FrmEntradaSaida extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
                                 .addComponent(JTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 103, Short.MAX_VALUE)))
+                        .addGap(0, 245, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -173,7 +178,7 @@ public class FrmEntradaSaida extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 279, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBConfirmar)
                     .addComponent(JBVoltar))
@@ -248,6 +253,10 @@ public class FrmEntradaSaida extends javax.swing.JFrame {
     private void JTFQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFQuantidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFQuantidadeActionPerformed
+
+    private void JCBTipoDadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBTipoDadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBTipoDadoActionPerformed
 
     
     /**
